@@ -10,6 +10,8 @@ COPY requirements.txt .
 # install dependencies
 RUN pip install -r requirements.txt
 
+RUN touch last_check
+
 # copy the content of the local src directory to the working directory
 COPY . .
 
