@@ -1,8 +1,8 @@
 #!/bin/bash
 
-touch $EMAIL_BOT_DIR/test.txt
-git pull
-source $EMAIL_BOT_DIR/venv/bin/activate
-pip3 install -r $EMAIL_BOT_DIR/requirements.txt
-python3 $EMAIL_BOT_DIR/main.py
+touch /home/zacharygottschall/email-bot/test.txt
+/usr/bin/git pull
+source /home/zacharygottschall/email-bot/venv/bin/activate
+/usr/bin/pip3 install -r /home/zacharygottschall/email-bot/requirements.txt
+/usr/bin/python3 /home/zacharygottschall/email-bot/main.py
 deactivate
