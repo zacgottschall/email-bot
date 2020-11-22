@@ -1,10 +1,8 @@
 #!/bin/bash
 
-touch $HOME/test.txt
+touch $EMAIL_BOT_DIR/test.txt
 git pull
-[ -d "./venv" ] || python3 -m venv venv
-source venv/bin/activate
-pip3 install -r requirements.txt
-[ -f "./last_check" ] || touch "./last_check"
-python3 main.py
+source $EMAIL_BOT_DIR/venv/bin/activate
+pip3 install -r $EMAIL_BOT_DIR/requirements.txt
+python3 $EMAIL_BOT_DIR/main.py
 deactivate
