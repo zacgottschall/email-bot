@@ -1,5 +1,6 @@
 #!/bin/bash
 
+touch $HOME/test.txt
 git pull
 [ -d "./venv" ] || python3 -m venv venv
 source venv/bin/activate
