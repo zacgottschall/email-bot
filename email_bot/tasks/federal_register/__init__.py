@@ -36,7 +36,13 @@ class FederalRegisterTask(Task):
                 currentPage += 1
                 results = fetch_search_results(json_url, currentPage)
 
-        document.save(filename)
+        print('saving file to ' + filename)
+        try:
+            document.save(filename)
+        except Exception as e:
+            print(e)
+
+        print('file saved')
 
         subject = "Federal Register Report - {}".format(date_of_report)
         body = "i love u"
@@ -49,7 +55,7 @@ def initialize_document(date_of_report):
     font = style.font
     font.name = 'Calibri'
     font.size = docx.shared.Pt(12)
-    filename = '~/FR_REPORT_' + date_of_report.replace('/', '-') + '.docx'
+    filename = str(Path.home()) + '/FR_REPORT_' + date_of_report.replace('/', '-') + '.docx'
     return document, filename
 
 
