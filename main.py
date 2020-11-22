@@ -1,4 +1,4 @@
-from os import getenv
+from os import getenv, remove
 from email_bot.utils import process_incoming_email
 from email_bot.models import IncomingEmail, EmailClient, OutgoingEmail
 from email_bot.exceptions import TaskException
@@ -15,6 +15,7 @@ if __name__ == "__main__":
         try:
             outgoing_email: OutgoingEmail = process_incoming_email(incoming_email)
             email_client.send(outgoing_email, incoming_email.frm)
+            remove(outgoing_email.filename)
         except TaskException as e:
             email_client.send(OutgoingEmail(
                 subject="Something went wrong",
