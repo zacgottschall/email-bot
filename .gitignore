@@ -3,3 +3,4 @@ last_check
 __pycache__
 *.pyc
 docs/
+.idea
