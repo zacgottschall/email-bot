@@ -1,0 +1,15 @@
+Pillow==8.0.1
+certifi==2020.11.8
+chardet==3.0.4
+idna==2.10
+lxml==4.6.1
+pip==20.2.4
+progress==1.5
+python-dateutil==2.8.1
+python-docx==0.8.10
+regex==2020.11.13
+requests==2.25.0
+setuptools==50.3.2
+six==1.15.0
+titlecase==1.1.1
+urllib3==1.26.2

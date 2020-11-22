@@ -10,7 +10,6 @@ class Task(ABC):
         try:
             return self.do_task(*args)
         except Exception as e:
-            e.
             raise TaskException(e)
 
     @abstractmethod
