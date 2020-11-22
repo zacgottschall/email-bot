@@ -5,6 +5,7 @@ from email_bot.models import IncomingEmail, EmailClient, OutgoingEmail
 from email_bot.exceptions import TaskException
 import http.server
 import socketserver
+import threading
 
 
 if __name__ == "__main__":
@@ -13,7 +14,7 @@ if __name__ == "__main__":
     Handler = http.server.SimpleHTTPRequestHandler
     
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        httpd.serve_forever()
+        threading.Thread(target=httpd.serve_forever)
 
     username: str = getenv('EMAIL_BOT_USERNAME')
     password: str = getenv('EMAIL_BOT_PASSWORD')
