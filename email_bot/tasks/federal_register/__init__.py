@@ -36,14 +36,7 @@ class FederalRegisterTask(Task):
                 currentPage += 1
                 results = fetch_search_results(json_url, currentPage)
 
-        print('saving file to ' + filename)
-        try:
-            document.save(filename)
-        except Exception as e:
-            print(e)
-
-        print('file saved')
-
+        document.save(filename)
         subject = "Federal Register Report - {}".format(date_of_report)
         body = "i love u"
         return OutgoingEmail(subject=subject, body=body, filename=filename)
