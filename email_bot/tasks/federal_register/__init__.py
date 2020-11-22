@@ -49,7 +49,7 @@ def initialize_document(date_of_report):
     font = style.font
     font.name = 'Calibri'
     font.size = docx.shared.Pt(12)
-    filename = '/email-bot/' + 'FR_REPORT_' + date_of_report.replace('/', '-') + '.docx'
+    filename = '/email-bot-files/' + 'FR_REPORT_' + date_of_report.replace('/', '-') + '.docx'
     return document, filename
 
 
