@@ -3,9 +3,18 @@ from time import sleep
 from email_bot.utils import process_incoming_email
 from email_bot.models import IncomingEmail, EmailClient, OutgoingEmail
 from email_bot.exceptions import TaskException
+import http.server
+import socketserver
 
 
 if __name__ == "__main__":
+    PORT = 8080
+
+    Handler = http.server.SimpleHTTPRequestHandler
+    
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        httpd.serve_forever()
+
     username: str = getenv('EMAIL_BOT_USERNAME')
     password: str = getenv('EMAIL_BOT_PASSWORD')
 

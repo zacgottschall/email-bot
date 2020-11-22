@@ -16,5 +16,6 @@ run: build
 			--rm \
 			--env EMAIL_BOT_USERNAME='federalregisterbot@gmail.com' \
 			--env EMAIL_BOT_PASSWORD='W#3Mz<)?~.~}B"q%'\
+			-p 8080:8080 \
 			--name ${LOCAL_CONTAINER_NAME} \
 			${DEV_IMAGE_NAME}
